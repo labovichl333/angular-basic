@@ -1,0 +1,70 @@
+<div class="applied-filters-container" *ngIf="getActiveFilters().length > 0">
+  <div class="applied-filters">
+    <span *ngFor="let filter of getActiveFilters()" class="filter-badge">
+      {{ filter.label }}
+      <button (click)="removeFilter(filter.key)" class="remove-filter">&times;</button>
+    </span>
+  </div>
+</div>
+
+<div class="main-layout">
+  <div class="filters-sidebar">
+    <form [formGroup]="filterForm" (ngSubmit)="applyFilters()" class="filters-form">
+      <div class="filter-group">
+        <label>Price ($)</label>
+        <div class="range-inputs">
+          <input
+            type="number"
+            formControlName="priceFrom"
+            placeholder="from"
+            (input)="clampPrice('priceFrom')">
+          <input
+            type="number"
+            formControlName="priceTo"
+            placeholder="to"
+            (input)="clampPrice('priceTo')">
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <label>Rating (★)</label>
+        <div class="range-inputs">
+          <input
+            type="number"
+            formControlName="ratingFrom"
+            placeholder="from"
+            (input)="clampRating('ratingFrom')">
+          <input
+            type="number"
+            formControlName="ratingTo"
+            placeholder="to"
+            (input)="clampRating('ratingTo')">
+        </div>
+      </div>
+
+      <div class="filter-group checkboxes">
+        <label>
+          <input type="checkbox" formControlName="inStock"> In stock
+        </label>
+        <label>
+          <input type="checkbox" formControlName="hasReviews"> Has reviews
+        </label>
+      </div>
+
+      <div class="filter-actions">
+        <button type="submit" class="btn btn-apply">Apply filters</button>
+        <button type="button" class="btn btn-clear" (click)="clearAllFilters()">Clear all</button>
+      </div>
+    </form>
+  </div>
+
+  @if (products && !loading) {
+    <app-products-feed [products]="products"></app-products-feed>
+  }
+  @if (loading) {
+    <div>Loading...</div>
+  }
+  @if (error) {
+    <div class="error">{{ error }}</div>
+  }
+</div>

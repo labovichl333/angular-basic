@@ -1,0 +1,5 @@
+<div class="main-layout">
+  @if (products$ | async; as products) {
+    <app-products-feed [products]="products"></app-products-feed>
+  }
+</div>
