@@ -10,8 +10,8 @@
           <input
             type="text"
             placeholder="Search..."
-            [value]="searchQuery"
-            (input)="onSearchInput($event)"
+            [(ngModel)]="searchQuery"
+            (input)="onSearchInput()"
             class="search-input"
             autocomplete="off"
           >

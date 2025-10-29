@@ -1,5 +1,5 @@
 import {Component, inject, OnInit} from '@angular/core';
-import {AuthService} from "../../services/ayth.service";
+import {AuthService} from "../../services/auth.service";
 import {Router} from "@angular/router";
 import {NgForm} from "@angular/forms";
 
@@ -40,7 +40,6 @@ export class AuthPageComponent implements OnInit {
         this.router.navigate(['/']);
       })
     } else {
-      ;
       this.authService.login(this.email, this.password).subscribe(success => {
         if (!success) {
           alert('Invalid email or password');

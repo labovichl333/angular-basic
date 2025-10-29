@@ -2,7 +2,6 @@ import {Component, inject, OnInit} from '@angular/core';
 import {Product} from "../../../shared/models/product.model";
 import {ActivatedRoute, Router} from "@angular/router";
 import {ProductService} from "../../../shared/services/product.service";
-import {NgForm} from "@angular/forms";
 
 @Component({
   selector: 'app-product-edit-page',
@@ -15,8 +14,8 @@ export class ProductEditPageComponent implements OnInit {
   private productService = inject(ProductService);
 
   product: Product | null = null;
-  formPrice: string = '';
-  formStock: string = '';
+  formPrice: number = 0;
+  formStock: number = 0;
 
   loading = true;
   error: string | null = null;
@@ -27,8 +26,8 @@ export class ProductEditPageComponent implements OnInit {
       this.productService.getProduct(id).subscribe({
         next: (product) => {
           this.product = product;
-          this.formPrice = product.price.toString();
-          this.formStock = product.stock.toString();
+          this.formPrice = product.price;
+          this.formStock = product.stock;
           this.loading = false;
         },
         error: () => {
@@ -39,50 +38,13 @@ export class ProductEditPageComponent implements OnInit {
     }
   }
 
-  isValidPrice(value: string): boolean {
-    if (value === '') return true;
-    const num = parseFloat(value);
-    return !isNaN(num) && isFinite(num);
-  }
-
-  isValidStock(value: string): boolean {
-    if (value === '') return true;
-    const num = parseInt(value, 10);
-    return !isNaN(num) && isFinite(num) && num.toString() === value;
-  }
-
-  enforcePositive(controlName: 'price' | 'stock'): void {
-    let value = controlName === 'price' ? this.formPrice : this.formStock;
-
-    if (value === '') return;
-
-    const num = parseFloat(value);
-    if (isNaN(num)) return;
-
-    if (num < 0) {
-      const absValue = Math.abs(num);
-      if (controlName === 'price') {
-        this.formPrice = absValue.toString();
-      } else {
-        this.formStock = Math.floor(absValue).toString();
-      }
-    }
-  }
-
-  onSubmit(form: NgForm): void {
-    if (!this.product || !form.valid) return;
-
-    if (!this.isValidPrice(this.formPrice) || !this.isValidStock(this.formStock)) {
-      return;
-    }
-
-    const price = this.formPrice ? parseFloat(this.formPrice) : 0;
-    const stock = this.formStock ? parseInt(this.formStock, 10) : 0;
+  onSubmit(): void {
+    if (!this.product) return;
 
     const updatedProduct: Product = {
       ...this.product,
-      price,
-      stock
+      price: this.formPrice,
+      stock: this.formStock
     };
 
     this.productService.updateProduct(updatedProduct).subscribe({

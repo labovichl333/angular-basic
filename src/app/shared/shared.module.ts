@@ -7,6 +7,8 @@ import {AddToCartComponent} from "./components/add-to-cart/add-to-cart.component
 import {ProductsFeedComponent} from "./components/products-feed/products-feed.component";
 import {RouterLink} from "@angular/router";
 import {FaIconComponent} from "@fortawesome/angular-fontawesome";
+import {FormsModule} from "@angular/forms";
+import {SearchPipe} from './pipes/search-pipe';
 
 
 @NgModule({
@@ -15,19 +17,22 @@ import {FaIconComponent} from "@fortawesome/angular-fontawesome";
     ReviewComponent,
     AvailabilityColorDirective,
     AddToCartComponent,
-    ProductsFeedComponent
+    ProductsFeedComponent,
+    SearchPipe
   ],
   exports: [
     ProductsFeedComponent,
     ReviewComponent,
     AddToCartComponent,
     AvailabilityColorDirective,
-    HeaderComponent
+    HeaderComponent,
+    SearchPipe
   ],
   imports: [
     CommonModule,
     RouterLink,
-    FaIconComponent
+    FaIconComponent,
+    FormsModule
   ]
 })
 export class SharedModule {

@@ -36,13 +36,10 @@ export class AuthService {
           return this.cartService.mergeLocalCartWithServer().pipe(
             map(() => true)
           );
-          return of(true);
         }
         return of(false);
       }),
-      catchError(err => {
-        return of(false);
-      })
+      catchError(() => of(false))
     );
   }
 

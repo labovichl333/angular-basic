@@ -1,7 +1,7 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 
-import {CartRoutingModule} from './cart-routing-module';
+import {CartRoutingModule} from './cart.routing-module';
 import {CartPageComponent} from "./pages/cart-page/cart-page.component";
 
 

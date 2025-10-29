@@ -3,7 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {BehaviorSubject, Observable, of} from 'rxjs';
 import {map, switchMap} from 'rxjs/operators';
 import {CartItem} from '../models/cart-item.model';
-import {AuthService} from "../../auth/services/ayth.service";
+import {AuthService} from "../../auth/services/auth.service";
 import {Product} from "../../shared/models/product.model";
 
 interface ServerCart {
@@ -24,10 +24,6 @@ export class CartService {
 
   cartItems: CartItem[] = [];
   cartItems$: BehaviorSubject<CartItem[]> = new BehaviorSubject<CartItem[]>(this.cartItems);
-
-  constructor() {
-    this.initializeCart()
-  }
 
   initializeCart() {
     let cart = null;

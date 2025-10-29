@@ -1,46 +1,48 @@
-<div class="product-detail-container" *ngIf="product">
-  <div class="product-image">
-    <img [src]="product.image" alt="{{ product.title }}">
+<div>
+  <div class="product-detail-container" *ngIf="product">
+    <div class="product-image">
+      <img [src]="product.image" alt="{{ product.title }}">
+    </div>
+
+    <div class="product-info">
+      <h1>{{ product.title }}</h1>
+
+      <div class="rating">
+        {{ product.rating.rate }}★ ({{ product.rating.count }} reviews)
+      </div>
+
+      <app-add-to-cart [product]="product"></app-add-to-cart>
+
+      <div class="availability" [appAvailabilityColor]="product.stock">
+        {{ getAvailabilityStatus(product.stock) }}
+      </div>
+
+      <div class="price">
+        Price: ${{ product.price }}
+      </div>
+
+      <div class="description">
+        {{ product.description }}
+      </div>
+    </div>
   </div>
 
-  <div class="product-info">
-    <h1>{{ product.title }}</h1>
+  <hr>
 
-    <div class="rating">
-      {{ product.rating.rate }}★ ({{ product.rating.count }} reviews)
-    </div>
+  <h3>Customer reviews:</h3>
 
-    <app-add-to-cart [product]="product"></app-add-to-cart>
-
-    <div class="availability" [appAvailabilityColor]="product.stock">
-      {{ getAvailabilityStatus(product.stock) }}
-    </div>
-
-    <div class="price">
-      Price: ${{ product.price }}
-    </div>
-
-    <div class="description">
-      {{ product.description }}
-    </div>
-  </div>
-</div>
-
-<hr>
-
-<h3>Customer reviews:</h3>
-
-@if (reviews && reviews.length > 0) {
-  @for (review of reviews; track review.id) {
-    <app-review [review]="review"></app-review>
+  @if (reviews && reviews.length > 0) {
+    @for (review of reviews; track review.id) {
+      <app-review [review]="review"></app-review>
+    }
+  } @else {
+    <p>No reviews yet for this product.</p>
   }
-} @else {
-  <p>No reviews yet for this product.</p>
-}
 
-@if (loading) {
-  <div>Loading...</div>
-}
-@if (error) {
-  <div class="error">Error loading data: {{ error }}</div>
-}
+  @if (loading) {
+    <div>Loading...</div>
+  }
+  @if (error) {
+    <div class="error">Error loading data: {{ error }}</div>
+  }
+</div>

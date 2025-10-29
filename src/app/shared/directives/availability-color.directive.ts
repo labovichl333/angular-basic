@@ -1,4 +1,4 @@
-import {Directive, ElementRef, Input, OnInit} from '@angular/core';
+import {Directive, ElementRef, Input, OnInit, Renderer2} from '@angular/core';
 
 @Directive({
   selector: '[appAvailabilityColor]'
@@ -7,7 +7,10 @@ export class AvailabilityColorDirective implements OnInit {
 
   @Input() appAvailabilityColor!: number;
 
-  constructor(private el: ElementRef) {
+  constructor(
+    private el: ElementRef,
+    private renderer: Renderer2
+  ) {
   }
 
   ngOnInit(): void {
@@ -22,7 +25,7 @@ export class AvailabilityColorDirective implements OnInit {
       color = '#f44336';
     }
 
-    this.el.nativeElement.style.color = color;
-    this.el.nativeElement.style.fontWeight = 'bold';
+    this.renderer.setStyle(this.el.nativeElement, 'color', color);
+    this.renderer.setStyle(this.el.nativeElement, 'font-weight', 'bold')
   }
 }

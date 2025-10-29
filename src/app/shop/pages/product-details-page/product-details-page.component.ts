@@ -33,12 +33,6 @@ export class ProductDetailsPageComponent implements OnInit, OnDestroy {
     });
   }
 
-  ngOnDestroy(): void {
-    if (this.paramMapSubscription) {
-      this.paramMapSubscription.unsubscribe();
-    }
-  }
-
   loadProductAndReviews(productId: string): void {
     this.loading = true;
     this.error = null;
@@ -75,6 +69,12 @@ export class ProductDetailsPageComponent implements OnInit, OnDestroy {
       return 'Almost sold out';
     } else {
       return 'Out of stock';
+    }
+  }
+
+  ngOnDestroy(): void {
+    if (this.paramMapSubscription) {
+      this.paramMapSubscription.unsubscribe();
     }
   }
 }

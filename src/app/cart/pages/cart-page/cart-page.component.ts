@@ -18,17 +18,12 @@ export class CartPageComponent implements OnInit, OnDestroy {
   totalPages = 1;
 
   ngOnInit(): void {
+    this.cartService.initializeCart()
     this.cartSubscription = this.cartService.cartItems$.subscribe(value => {
       this.cartItems = value
       this.totalPages = Math.ceil(this.cartItems.length / this.itemsPerPage);
       this.currentPage = Math.min(this.currentPage, this.totalPages);
     })
-  }
-
-  ngOnDestroy(): void {
-    if (this.cartSubscription) {
-      this.cartSubscription.unsubscribe();
-    }
   }
 
   updateCount(productId: string, delta: number): void {
@@ -61,4 +56,9 @@ export class CartPageComponent implements OnInit, OnDestroy {
     return pages;
   }
 
+  ngOnDestroy(): void {
+    if (this.cartSubscription) {
+      this.cartSubscription.unsubscribe();
+    }
+  }
 }

@@ -1,106 +1,110 @@
-<div class="edit-product-container" *ngIf="product && !loading">
-  <h2>Edit product info:</h2>
+<div>
+  <div class="edit-product-container" *ngIf="product && !loading">
+    <h2>Edit product info:</h2>
 
-  <div class="form-layout">
-    <form #productForm="ngForm" (ngSubmit)="onSubmit(productForm)" novalidate class="form-left">
-      <div class="form-group">
-        <label for="image">Image:</label>
-        <input
-          type="text"
-          id="image"
-          name="image"
-          [(ngModel)]="product.image"
-          required
-          class="form-control"
-          [class.is-invalid]="productForm.submitted && image.invalid"
-          #image="ngModel">
-        <div *ngIf="productForm.submitted && image.invalid" class="invalid-feedback">
-          Image URL is required.
+    <div class="form-layout">
+      <form #productForm="ngForm" (ngSubmit)="onSubmit()" novalidate class="form-left">
+        <div class="form-group">
+          <label for="image">Image:</label>
+          <input
+            type="text"
+            id="image"
+            name="image"
+            [(ngModel)]="product.image"
+            required
+            class="form-control"
+            [class.is-invalid]="image.invalid"
+            #image="ngModel">
+          <div *ngIf="image.invalid" class="invalid-feedback">
+            Image URL is required.
+          </div>
         </div>
-      </div>
 
-      <div class="form-group">
-        <label for="title">Title:</label>
-        <input
-          type="text"
-          id="title"
-          name="title"
-          [(ngModel)]="product.title"
-          required
-          class="form-control"
-          [class.is-invalid]="productForm.submitted && title.invalid"
-          #title="ngModel">
-        <div *ngIf="productForm.submitted && title.invalid" class="invalid-feedback">
-          Title is required.
+        <div class="form-group">
+          <label for="title">Title:</label>
+          <input
+            type="text"
+            id="title"
+            name="title"
+            [(ngModel)]="product.title"
+            required
+            class="form-control"
+            [class.is-invalid]="title.invalid"
+            #title="ngModel">
+          <div *ngIf="title.invalid" class="invalid-feedback">
+            Title is required.
+          </div>
         </div>
-      </div>
 
-      <div class="form-group">
-        <label for="price">Price:</label>
-        <input
-          type="text"
-          id="price"
-          name="price"
-          [(ngModel)]="formPrice"
-          required
-          #priceCtrl="ngModel"
-          class="form-control"
-          [class.is-invalid]="productForm.submitted && (!isValidPrice(formPrice) || priceCtrl.invalid)"
-          (input)="enforcePositive('price')">
-        <div *ngIf="productForm.submitted && !isValidPrice(formPrice)" class="invalid-feedback">
-          Price must be a valid number ≥ 0 (e.g., 123 or 123.5).
+        <div class="form-group">
+          <label for="price">Price:</label>
+          <input
+            type="number"
+            id="price"
+            name="price"
+            [(ngModel)]="formPrice"
+            required
+            min="0"
+            step="0.01"
+            #priceCtrl="ngModel"
+            class="form-control"
+            [class.is-invalid]="priceCtrl.invalid">
+          <div *ngIf="priceCtrl.invalid" class="invalid-feedback">
+            Please enter a valid price (≥ 0).
+          </div>
         </div>
-      </div>
 
-      <div class="form-group">
-        <label for="stock">Number in stock:</label>
-        <input
-          type="text"
-          id="stock"
-          name="stock"
-          [(ngModel)]="formStock"
-          required
-          #stockCtrl="ngModel"
-          class="form-control"
-          [class.is-invalid]="productForm.submitted && (!isValidStock(formStock) || stockCtrl.invalid)"
-          (input)="enforcePositive('stock')">
-        <div *ngIf="productForm.submitted && !isValidStock(formStock)" class="invalid-feedback">
-          Stock must be an integer ≥ 0.
+        <div class="form-group">
+          <label for="stock">Number in stock:</label>
+          <input
+            type="number"
+            id="stock"
+            name="stock"
+            [(ngModel)]="formStock"
+            required
+            min="0"
+            step="1"
+            #stockCtrl="ngModel"
+            class="form-control"
+            [class.is-invalid]="stockCtrl.invalid">
+          <div *ngIf="stockCtrl.invalid" class="invalid-feedback">
+            Stock must be a non-negative integer.
+          </div>
         </div>
-      </div>
 
-      <div class="form-group">
-        <label for="description">Description:</label>
-        <textarea
-          id="description"
-          name="description"
-          [(ngModel)]="product.description"
-          required
-          class="form-control"
-          [class.is-invalid]="productForm.submitted && description.invalid"
-          #description="ngModel"></textarea>
-        <div *ngIf="productForm.submitted && description.invalid" class="invalid-feedback">
-          Description is required.
+        <div class="form-group">
+          <label for="description">Description:</label>
+          <textarea
+            id="description"
+            name="description"
+            [(ngModel)]="product.description"
+            required
+            class="form-control"
+            [class.is-invalid]="description.invalid"
+            #description="ngModel"></textarea>
+          <div *ngIf="description.invalid" class="invalid-feedback">
+            Description is required.
+          </div>
         </div>
+
+        <button
+          type="submit"
+          class="btn btn-submit"
+          [disabled]="productForm.invalid">
+          Submit
+        </button>
+      </form>
+
+      <div class="preview-right">
+        <img [src]="product.image" alt="Preview" class="preview-img">
       </div>
-
-      <button
-        type="submit"
-        class="btn btn-submit"
-        [disabled]="!productForm.valid">
-        Submit
-      </button>
-    </form>
-
-    <div class="preview-right">
-      <img [src]="product.image" alt="Preview" class="preview-img">
     </div>
   </div>
-</div>
 
-@if (loading) {
-  <div>Loading...</div>
-}
-@if (error) {
-  <div class="error">{{ error }}</div>
-}
+  @if (loading) {
+    <div>Loading...</div>
+  }
+  @if (error) {
+    <div class="error">{{ error }}</div>
+  }
+</div>
