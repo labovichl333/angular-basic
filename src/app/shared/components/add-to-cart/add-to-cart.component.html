@@ -1,0 +1,19 @@
+@if (!cartService.getProductCount(product.id)) {
+  <button
+    class="btn btn-add"
+    [disabled]="product.stock === 0"
+    (click)="cartService.addToCart(product)">
+    <i class="fas fa-shopping-cart"></i> Add To Cart
+  </button>
+} @else {
+  <div class="cart-counter">
+    <button class="btn btn-small" (click)="cartService.decreaseCount(product.id)">-</button>
+    {{ cartService.getProductCount(product.id) }}
+    <button
+      class="btn btn-small"
+      [disabled]="product.stock === cartService.getProductCount(product.id)"
+      (click)="cartService.increaseCount(product.id)">
+      +
+    </button>
+  </div>
+}

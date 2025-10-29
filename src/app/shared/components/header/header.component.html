@@ -1,0 +1,36 @@
+<header class="app-header">
+  <nav>
+    <div class="nav-left">
+      <a [routerLink]="['/']" class="logo">My Shop</a>
+      <fa-icon [routerLink]="['/cart']" class="nav-link" [icon]="faCartShopping"/>
+    </div>
+    <div class="nav-right">
+      <div class="search-container">
+        <div class="search-input-wrapper">
+          <input
+            type="text"
+            placeholder="Search..."
+            [(ngModel)]="searchQuery"
+            (input)="onSearchInput()"
+            class="search-input"
+            autocomplete="off"
+          >
+          @if (searchQuery) {
+            <button
+              type="button"
+              class="search-clear"
+              (click)="clearSearch()"
+              aria-label="Clear search">
+              &times;
+            </button>
+          }
+        </div>
+      </div>
+      @if (authService.isLoggedIn()) {
+        <fa-icon [icon]="faRightFromBracket" (click)="logout()" class="btn btn-logout"/>
+      } @else {
+        <a [routerLink]="['/auth']" class="nav-link">Login / Register</a>
+      }
+    </div>
+  </nav>
+</header>

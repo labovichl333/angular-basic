@@ -1,0 +1,53 @@
+<div class="cart-container">
+  <h2>Your Cart</h2>
+
+  @if (cartItems.length === 0) {
+    <p>Your cart is empty.</p>
+  } @else {
+    <table class="cart-table">
+      <thead>
+      <tr>
+        <th>Product ID</th>
+        <th>Product Name</th>
+        <th>Count</th>
+        <th>Price</th>
+        <th>Total Price</th>
+        <th>Action</th>
+      </tr>
+      </thead>
+      <tbody>
+        @for (item of paginatedItems; track item.id) {
+          <tr>
+            <td>{{ item.id }}</td>
+            <td>{{ item.title }}</td>
+            <td>
+              <button (click)="updateCount(item.id, -1)" class="btn btn-small">-</button>
+              {{ item.count }}
+              <button (click)="updateCount(item.id, 1)" class="btn btn-small">+</button>
+            </td>
+            <td>${{ item.price }}</td>
+            <td>${{ item.price * item.count }}</td>
+            <td>
+              <button (click)="cartService.removeFromCart(item.id)" class="btn btn-delete">×</button>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+
+    <div class="pagination">
+      @for (page of getPages(); track page) {
+        <button
+          (click)="goToPage(page)"
+          class="page-btn"
+          [class.active]="page === currentPage">
+          {{ page }}
+        </button>
+      }
+    </div>
+
+    <div class="cart-summary">
+      <strong>Total: ${{ cartService.getTotalPrice() }}</strong>
+    </div>
+  }
+</div>

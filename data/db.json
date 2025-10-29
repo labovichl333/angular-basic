@@ -1,0 +1,194 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "title": "Van Cleef & Arpels Extraordinaire Precious Oud Eau de Parfum, 75ml",
+      "price": 93.5,
+      "description": "The scents of Van Cleef & Arpels are magical Collection Extraordinaire, unique and breathe an unmistakable personality. From all the use of precious old and present the mix fascinating, spicy, woody and floral notes. Adventure and joy of life, a steady state in life and a taste for a touch of luxury are side effects associated with the scents of the Van Cleef & Arpels Collection Extraordinaire and distinguish with a lot of individuality precise mix of minimalism and luxury expresses that the simplicity of things is true luxury often and there is no need to feel wealth happiness and love, joy, personality and sensuality and passion. Van Cleef & Arpels was found in 1896 and has over more than 55 fragrances.",
+      "image": "data:image/jpeg;base64,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",
+      "stock": 754,
+      "hasReviews": true,
+      "rating": {
+        "rate": 0,
+        "count": 0
+      }
+    },
+    {
+      "id": "2",
+      "title": "Moresque Gold Collection Sole Eau de Parfum, 50ml",
+      "price": "287",
+      "description": "The name and identity of the brand are inspired by the Moorish civilization and architecture. Moresque perfume offers a collection of unique and modern perfumes that are reminiscent of the scent of the Orient in combination with Italian delicacy. The perfumes are all true sensations, which give you a feeling of luxury. Moresque perfumes are Haute Parfumerie Products. These perfumes reveal luxury, style and distinction.",
+      "stock": 45,
+      "image": "https://www.laromat.ru/pics/moresque_sole_unisex.jpg",
+      "hasReviews": false,
+      "rating": {
+        "rate": 4.1,
+        "count": 259
+      }
+    },
+    {
+      "id": "3",
+      "title": "Vince Camuto Eterno Eau de Toilette, 100ml",
+      "price": 286,
+      "description": "Vince Camuto is a new fragrance brand. The collection includes women's fragrances as Amore, Fiori, Vince Camuto and Vince Camuto Femme. Male fragrances include Vince Camuto for Men and Vince Camuto Homme. These fragrances are available in Eau de Toilette perfumes, lotions and gift sets which include items such as stick deodorant for men and rollerball perfume sticks for women. Vince Camuto has 16 fragrances in the the fragrance market.",
+      "stock": 48,
+      "image": "https://avatars.mds.yandex.net/get-mpic/4334326/img_id7152189713356920281.jpeg/orig",
+      "hasReviews": true,
+      "rating": {
+        "rate": 3.7,
+        "count": 95
+      }
+    },
+    {
+      "id": "4",
+      "title": "Antonio Visconti Silver Wood Eau de Parfum, 100ml",
+      "price": 174,
+      "description": "Visconti perfumes has an unmistakable, specific and enduring olfactory signature, thanks to the concentration of the essences used. These are created with the knowledge and skill of ancient apothecaries, using special blending techniques that can often take several months. This lenght of time is essential if the perfume oils are to find the ideal condition to merge and form a final, perfect harmony that is sublime and sumptuous, able to make the most important moments of life even more special.",
+      "stock": 45,
+      "image": "https://www.aroma-butik.ru/images/product_images/original_images/150107_0.jpg",
+      "hasReviews": false,
+      "rating": {
+        "rate": 4.2,
+        "count": 32
+      }
+    },
+    {
+      "id": "5",
+      "title": "Alexandre.J The Collector Golden Oud Eau de Parfum, 100ml",
+      "price": 95,
+      "description": "Alexander. J reinvents the notion of fragrances. Each fragrance explores a wide range of olfactory notes dosed for a unique design and composition. The raw materials are noble and valuable. As each of them reacts differently to heat. Alexander. J has more than 20 perfumes in the market. The earliest edition was launched in 2012.",
+      "stock": 0,
+      "image": "https://spb.wadoo.ru/upload/iblock/a76/a767e88a45949f1c1e67eae9005cac90.png",
+      "hasReviews": false,
+      "rating": {
+        "rate": 1.2,
+        "count": 14
+      }
+    },
+    {
+      "id": "6",
+      "title": "Parfums de Marly Herod Eau de Parfum, 125ml",
+      "price": 198,
+      "description": "Unforgettable thanks to its addictive presence and unique appeal, this exhilarating fragrance fits within the great lineage of Parfums de Marly. Its bottles features the brand’s equestrian cabinets, embossed on solid and opaque glass. Parfums de Marly has 30 perfumes in the fragrance market. The earliest edition was created in 2009.",
+      "stock": 9,
+      "image": "https://www.laromat.ru/pics/86858MARLY_Herod.jpg",
+      "hasReviews": false,
+      "rating": {
+        "rate": 0,
+        "count": 0
+      }
+    },
+    {
+      "id": "7",
+      "title": "Aedes de Venustas Oeillet Bengale Eau de Parfum, 100ml",
+      "price": 154,
+      "description": "The Bengale Oeillet is actually a variety of China rose, Rosa Indica caryophyllea, bred by the floral painter and botanist ",
+      "stock": 0,
+      "image": "https://cdn1.ozone.ru/s3/multimedia-h/6180297521.jpg",
+      "hasReviews": false,
+      "rating": {
+        "rate": 4.5,
+        "count": 8
+      }
+    },
+    {
+      "id": "8",
+      "title": "Ajmal Silver Shade Eau de Parfum, 100ml",
+      "price": 20.9,
+      "description": "Ajmal Perfumes has nearly 6 decades of expertise in crafting some of the most enchanting and enticing oriental perfumes. At Ajmal perfected the science, art and craft of oriental perfumery. These selections appeal to modern connoisseurs who are also deeply rooted in traditional values. These concentrated perfume oils and eau de parfums offer discerning consumers a truly memorable experience.",
+      "stock": 20,
+      "image": "https://cdn1.ozone.ru/s3/multimedia-o/6400589484.jpg",
+      "hasReviews": false,
+      "rating": {
+        "rate": 2.6,
+        "count": 11
+      }
+    },
+    {
+      "id": "9",
+      "title": "Creed Bois Du Portugal Eau de Parfum, 100ml",
+      "price": 214.5,
+      "description": "Creed has created extraordinary perfumes for more than 250 years. The brand Creed is interesting not only because of its long and famous history, but also because of the old processing techniques of precious materials that are selected for the production of the unique perfumes. Creed prefers natural ingredients of top quality over synthetic alternatives. Creed includes scents for men, women and unisex perfumes. They are packaged in elegant bottles that are a modern version of the beautiful historic models.",
+      "stock": 5,
+      "image": "https://i.pinimg.com/736x/75/36/cf/7536cfefa7b31978b439f724603cdbb1.jpg",
+      "hasReviews": false,
+      "rating": {
+        "rate": 4.9,
+        "count": 14
+      }
+    },
+    {
+      "id": "10",
+      "title": "Ajmal Zeal Eau de Parfum, 100ml",
+      "price": 33,
+      "description": "Ajmal Perfumes has nearly 6 decades of expertise in crafting some of the most enchanting and enticing oriental perfumes. At Ajmal perfected the science, art and craft of oriental perfumery. These selections appeal to modern connoisseurs who are also deeply rooted in traditional values. These concentrated perfume oils and eau de parfums offer discerning consumers a truly memorable experience.",
+      "stock": 10,
+      "image": "https://cdn2.randewoo.ru/img/105060/z/1",
+      "hasReviews": false,
+      "rating": {
+        "rate": 5,
+        "count": 1
+      }
+    }
+  ],
+  "cart": [
+    {
+      "id": "1",
+      "userId": "1",
+      "products": [
+        {
+          "id": "2",
+          "title": "Moresque Gold Collection Sole Eau de Parfum, 50ml",
+          "count": 8,
+          "price": 287
+        },
+        {
+          "id": "4",
+          "title": "Antonio Visconti Silver Wood Eau de Parfum, 100ml",
+          "price": 174,
+          "count": 6
+        }
+      ]
+    }
+  ],
+  "users": [
+    {
+      "email": "test@gmail.com",
+      "password": "qqqqqq",
+      "id": "1"
+    },
+    {
+      "email": "test1@gmail.com",
+      "password": "qqqqqq",
+      "id": "2"
+    },
+    {
+      "email": "test2@gmail.com",
+      "password": "qqqqqq",
+      "id": "3"
+    }
+  ],
+  "reviews": [
+    {
+      "id": "1",
+      "productId": 3,
+      "name": "John S.",
+      "rate": 4,
+      "text": "Good product!"
+    },
+    {
+      "id": "2",
+      "productId": 3,
+      "name": "Ella A.",
+      "rate": 5,
+      "text": "Great product!"
+    },
+    {
+      "id": "3",
+      "productId": 1,
+      "name": "Jacob W.",
+      "rate": 2,
+      "text": "Doesn't fit :("
+    }
+  ]
+}
